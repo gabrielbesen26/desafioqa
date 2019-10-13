@@ -34,7 +34,7 @@ Identifiquei que os possíveis testes poderiam ser realizados
 - Realizar a compra de um ingresso pago, não informar os campos obrigatórios e verificar a mensagem de obrigatoriedade
 - Realizar a compra de um ingresso pago, informar o nome com um espaço e verificar mensagem de nome inválido.
 
-Os casos de teste você irá encontrar no diretório "/cypress/integration/compra_de_ingresso.feature"
+Os casos de teste você irá encontrar no diretório "1_planejamento" e os casos de testes implementado no diretório "/cypress/integration/compra_de_ingresso.feature"
 
 ## Desafio 2 - Execução dos testes
 

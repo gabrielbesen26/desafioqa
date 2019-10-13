@@ -2,3 +2,5 @@ node_modules
 README_gabriel*
 README_bkp*
 package_bkp.json
+cypress/videos
+cypress/screenshots
