@@ -22,7 +22,7 @@ Abaixo você encontrará informações sobre as estratégias adotadas, instruç�
 
 ## Desafio 1 - Planejamento de testes
 Acessando a URL do evento https://evento.moblee.com.br/ByKtijSZQ notei que a página é dividida por partes (cabeçalho, rodapé, conteúdo, eventos passados, programação, mapa e etc) ou seja, me parece que o usuário pode optar por modelos de componentes para inserir em seu evento eu diria, do qual o usuário pode editar o texto e conteúdo.
-Notei que por conta disso, os identificadores dos elementos html são dinâmicos, ou seja, o "id" de um botão de se "inscrever" por exemplo nunca será o mesmo para outros eventos, neste caso a automação de testes terá que interagir com os elementos de outra forma, sem ser por "id", "name" ou "class". Teste automatizado trabalha com pré-condições e dados concretos.
+Notei que por conta disso, os identificadores dos elementos html são dinâmicos, ou seja, o "id" de um botão de se "inscrever" por exemplo nunca será o mesmo para outros eventos, neste caso a automação de testes terá que interagir com os elementos de outra forma, sem ser por "id", "name" ou "class". Teste automatizado trabalha com pré-condições e dados concretos e isso vai dificultar um monte a vida do QA.
 
 A página do evento com certeza poderia conter casos de testes mas nesse caso, eu foquei somente na compra de ingressos conforme foi solicitado. Sem possuir qualquer tipo de artefato como estórias de usuário/requisitos contendo as regras de negócio, optei por especificar e automatizar somente os testes de "caminho feliz" (smoke test) para que os testes levem menos tempo de execução, provendo rápido feedback se o usuário está sendo impedido de comprar ingresso ou não. 
 
