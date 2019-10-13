@@ -1,0 +1,24 @@
+{
+  "name": "desafioqa_gabriel",
+  "version": "1.0.0",
+  "description": "Desafio QA para vaga de Analista de Testes",
+  "main": "",
+  "scripts": {
+    "cypress:open": "cypress open",
+    "cypress:run": "cypress run --record --key 29f26d9a-e4de-4233-8358-c6c359e10cb5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/gabrielbesen26/desafioqa.git"
+  },
+  "author": "Gabriel Thomaz H. Besen",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/gabrielbesen26/desafioqa/issues"
+  },
+  "homepage": "https://github.com/gabrielbesen26/desafioqa#readme",
+  "devDependencies": {
+    "cypress": "^3.4.1",
+    "cypress-cucumber-preprocessor": "^1.16.2"
+  }
+}

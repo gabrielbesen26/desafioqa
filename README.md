@@ -1,56 +1,41 @@
 # Desafio para a vaga de Analista de Testes
-Se você recebeu esse link, provavelmente você se candidatou para a vaga de Analista de Testes do time de produto da mobLee. Então, primeiramente, parabéns por ter sido selecionado =)
+Candidato: Gabriel Thomaz H. Besen
 
-Abaixo seguem todas as instruções para você conseguir executar o desafio.
+## Introdução
+Olá, este é um repositório que contém os seguintes artefatos:
+- Arquivo read-me (este que você está lendo :D)
+- Casos de testes 
+- Scripts de teste
+- Explicação sobre o report após a execução dos testes
+- Framework de automação (Cypress)
 
-### Como entregar este desafio
-1. Faça um fork deste repositório no Github (ou qualquer outro gerenciador git da sua preferência).
-2. Edite esse README e mantenha ele atualizado com o passo-a-passo do seu processo, bem como qualquer outra informação relevante para que tenhamos a melhor compreensão possível do seu desafio
-3. Fique a vontade para adicionar qualquer tipo de conteúdo/arquivo que julgue útil
-4. Ao final do desafio, responda o e-mail que você recebeu enviando o link do seu repositório.
-Obs.: Não fazer um Pull Request para este projeto!
+Por favor, leia as instruções abaixo para melhor entendimento das estratégias adotadas que eu utilizei para este desafio. Você já deve ter percebido que a estrutura de pastas está diferente conforme solicitado, mas calma, há uma explicação :D
 
-### Com o que devo me preocupar quando for entregar os desafios?
-- Descreva como utilizar e executar a sua solução;
-- Descreva o processo de resolução dos desafios;
-- Descreva a motivação e o porque da utilização de cada tecnologia;
-- Descreva qualquer outra coisa que acha importante sabermos :)
-- Não se limite aos requisitos destes desafios. Sinta-se em casa em adicionar mais detalhes a solução.
+### Sobre a estrutura de pastas e ferramenta
+Primeiramente, comecei por escolher o framework de automação e escolhi utilizar o Cypress. Para ser bem resumido, Cypress é uma ferramenta de testes end-to-end e all in one. Com ela basicamente você centraliza todos os testes feitos por desenvolvedores e qa, ou seja, dentro dela pode conter testes unitários, de integração e de comportamento tudo em um só lugar. Esta ferramenta contém todos os utilitários necessários para a automação e para melhorar, ela é open source.
+
+No site https://docs.cypress.io/plugins/ você encontra diversos plugins desenvolvidos pela comunidade. Além disso, você pode customizar seus próprios comandos para reutilização de código e aumentar ainda mais a sua produtividade.
+
+Porém, com esta ferramenta, você precisa seguir alguns padrões de estrutura de pastas e este é o motivo de o porque eu não segui a estrutura de pastas solicitadas no desafio. Por exemplo: Os scripts de execução DEVEM estar contidos em um diretório conforme a documentação, caso contrário, a ferramenta não encontra os scripts. Já é dito pelos desenvolvedores da ferramenta que Cypress não está finalizada, ela está em constante evolução.
+
+Abaixo você encontrará informações sobre as estratégias adotadas, instruções para instalação, execução dos testes, resultados da execução e também onde está cada artefato solicitado para o desafio ok?
 
 ## Desafio 1 - Planejamento de testes
-Objetivo: Criar um documento descrevendo os testes a serem realizados em https://evento.moblee.com.br/ByKtijSZQ
+Acessando a URL do evento https://evento.moblee.com.br/ByKtijSZQ notei que a página é dividida por partes (cabeçalho, rodapé, conteúdo, eventos passados, programação, mapa e etc) ou seja, me parece que o usuário pode optar por modelos de componentes para inserir em seu evento eu diria, do qual o usuário pode editar o texto e conteúdo.
+Notei que por conta disso, os identificadores dos elementos html são dinâmicos, ou seja, o "id" de um botão de se "inscrever" por exemplo nunca será o mesmo para outros eventos, neste caso a automação de testes terá que interagir com os elementos de outra forma, sem ser por "id", "name" ou "class". Teste automatizado trabalha com pré-condições e dados concretos.
 
-### Descrição
-Você deverá especificar todos os casos de testes para o processo de compra de ingressos no site acima.
+A página do evento com certeza poderia conter casos de testes mas nesse caso, eu foquei somente na compra de ingressos conforme foi solicitado. Sem possuir qualquer tipo de artefato como estórias de usuário/requisitos contendo as regras de negócio, optei por especificar e automatizar somente os testes de "caminho feliz" (smoke test) para que os testes levem menos tempo de execução, provendo rápido feedback se o usuário está sendo impedido de comprar ingresso ou não. 
 
-Esse é um evento de testes, então não se preocupe em colocar dados "sujos" nele. 
+Identifiquei que os possíveis testes poderiam ser realizados
+- Clicar no botão de se inscrever e verificar se a janela de compra foi aberta com os devidos campos e botões 
+- Realizar a compra de um ingresso gratuíto e verificar campos e mensagens
+- Realizar a compra de um ingresso pago e verificar os campos e janela de pagamento
+- Realizar a compra de um ingresso gratuito, não informar os campos obrigatórios e verificar a mensagem de obrigatoriedade
+- Realizar a compra de um ingresso pago, não informar os campos obrigatórios e verificar a mensagem de obrigatoriedade
+- Realizar a compra de um ingresso pago, informar o nome com um espaço e verificar mensagem de nome inválido.
 
-Se precisar utilizar um cartão de crédito você pode utilizar `4242 4242 4242 4242` com CVV `400`, qualquer data no futuro e nome do cartão são válidos.
-
-Crie um diretório chamado `1_planejamento` e armazene os cenários/casos de teste nele
-
-Você tem a opção de escolher entre esses dois formatos de entrega:
-1- Utilizando a linguagem [Gherkin](https://cucumber.io/docs/gherkin/reference/)
-2- Utilizando uma planilha com as colunas: Dados dos testes, Procedimento e Resultado Esperado
+Os casos de teste você irá encontrar no diretório "/cypress/integration/compra_de_ingresso.feature"
 
 ## Desafio 2 - Execução dos testes
-Objetivo: Executar os testes planejados na Parte 1, evidenciar os testes executados, criar métricas de execução e registro de defeitos.
-
-### Descrição
-Crie um diretório chamado `2_execucao`, onde você deve armazenar o resultado de execução de cada um dos testes planejados. 
-
-Identifique quais testes foram feitos, número de testes que passaram e o número de testes falhos, além de qualquer informação complementar que considere relevante.
-
-Crie também uma planilha com o registro dos defeitos encontrados durante a execução.
-
-Pense que outras pessoas precisarão ler e entender essas anotações (desenvolvedores, outros QAs, gerentes de projeto etc.).
 
 ## Desafio 3 - Automação dos testes
-Objetivo: Automatizar 3 dos cenário/casos de teste
-
-### Descrição
-Escolha 3 dos cenários/casos de teste que você executou e automatize ele.
-
-Crie um diretório chamado `3_automacao` para armazenar o código da automação.
-
-Você pode utilizar qualquer framework/ferramenta que preferir. Só lembre de deixar claro o passo-a-passo para executarmos sua automação. Lembre-se que a máquina de quem efetuará a avaliação nem sempre contém todos os pacotes, programas e afins, necessários para a execução.
