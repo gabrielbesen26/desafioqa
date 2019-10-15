@@ -39,6 +39,9 @@ Os casos de teste você irá encontrar no diretório "1_planejamento" e os casos
 ## Desafio 2 - Execução dos testes
 O relatório de execução de testes você vai encontrar no diretório: */2_execucao/Report 15_10_2019.xlsx
 
+A issue registrada se encontra em: 
+https://github.com/gabrielbesen26/desafioqa/issues
+
 No relatório você encontra informações como data de execução, quem o executou, funcionalidade, casos executados, status da execução de cada caso e observações em caso de falhas, alertando assim quem está lendo o relatório sobre issues geradas, informações sobre falsos positivos e etc.
 
 A ferramenta de automação Cypress contém um CI próprio e dentro da ferramenta você encontra também o report de execução. Basta acessar o diretório raiz do projeto e executar o comando: "npm run cypress:open"
